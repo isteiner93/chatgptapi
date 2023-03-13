@@ -1,7 +1,7 @@
 import gradio as gr
 import openai
 
-openai.api_key = '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'
+openai.api_key = 'INSERT YOUR KEY'
 
 message_history = [{"role": "user", "content": f"Hello."},
                    {"role": "assistant", "content": f"OK"}]
