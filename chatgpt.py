@@ -36,12 +36,14 @@ with gr.Blocks() as demo:
         The show_label parameter is set to False to hide the label, 
         and the placeholder parameter is set'''
         txt = gr.Textbox(show_label=False, placeholder="Enter text and press enter").style(container=False)
+    
     '''
     sets the submit action of the Textbox to the predict function, 
     which takes the input from the Textbox, the chatbot instance, 
     and the state instance as arguments. 
     This function processes the input and generates a response from the chatbot, 
     which is displayed in the output area.'''
+    
     txt.submit(predict, txt, chatbot) # submit(function, input, output)
     #txt.submit(lambda :"", None, txt)  #Sets submit action to lambda function that returns empty string 
 
@@ -49,6 +51,7 @@ with gr.Blocks() as demo:
     sets the submit action of the Textbox to a JavaScript function that returns an empty string. 
     This line is equivalent to the commented out line above, but uses a different implementation. 
     The _js parameter is used to pass a JavaScript function to the submit method.'''
+    
     txt.submit(None, None, txt, _js="() => {''}") # No function, no input to that function, submit action to textbox is a js function that returns empty string, so it clears immediately.
          
 demo.launch(share=True)
